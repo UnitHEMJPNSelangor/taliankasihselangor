@@ -16,10 +16,10 @@
     .page{max-width:1180px;margin:auto;padding:28px 18px 60px}
     .hero{background:#fff;border-radius:28px;overflow:hidden;box-shadow:var(--shadow);border:1px solid rgba(124,58,237,.12)}
     .hero img{display:block;width:100%;height:auto}
-    .hero-copy{display:flex;justify-content:space-between;gap:22px;align-items:center;padding:26px 34px 30px;border-top:1px solid var(--line)}
+    .hero-copy{display:flex;justify-content:space-between;gap:28px;align-items:center;padding:26px 34px 30px;border-top:1px solid var(--line)}.hero-copy>div:first-child{flex:1;min-width:0}
     .hero-copy h1{font-size:clamp(28px,4vw,48px);line-height:1.06;margin:0 0 10px;color:var(--navy);letter-spacing:-.035em}
     .hero-copy p{margin:0;color:var(--muted);font-size:17px;line-height:1.65;max-width:760px}
-    .pill{flex:none;display:inline-flex;align-items:center;gap:9px;background:#f3e8ff;color:#6d28d9;border:1px solid #dfc8ff;border-radius:999px;padding:11px 14px;font-weight:700;font-size:13px}
+    .pill{flex:0 0 390px;max-width:390px;display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#fff1f2;color:#b42318;border:1px solid #fecdd3;border-radius:22px;padding:12px 18px;font-weight:800;font-size:13px;line-height:1.45;text-align:center;white-space:normal}
     .layout{display:grid;grid-template-columns:280px minmax(0,1fr);gap:24px;margin-top:24px}
     .side{position:sticky;top:18px;align-self:start;background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:0 10px 32px rgba(91,33,182,.08)}
     .side-title{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:#7890a4;font-weight:800;margin:4px 6px 14px}
@@ -62,7 +62,7 @@
       html[lang="ta"] .hero-copy h1{font-size:clamp(24px,7.8vw,32px);line-height:1.22}
       html[lang="zh-CN"] .hero-copy p, html[lang="ta"] .hero-copy p{font-size:15px}
     }
-    @media(max-width:900px){.layout{grid-template-columns:1fr}.side{position:static}.step-nav{grid-template-columns:repeat(4,1fr)}.step-link{justify-content:center}.step-link span:last-child{display:none}.helpbox{display:none}.hero-copy{align-items:flex-start;flex-direction:column}}
+    @media(max-width:900px){.layout{grid-template-columns:1fr}.side{position:static}.step-nav{grid-template-columns:repeat(4,1fr)}.step-link{justify-content:center}.step-link span:last-child{display:none}.helpbox{display:none}.hero-copy{align-items:flex-start;flex-direction:column}.pill{flex:0 1 auto;max-width:440px}}
     @media(max-width:680px){.page{padding:10px 10px 35px}.hero{border-radius:18px}.hero-copy{padding:20px}.pill{display:none}.card{border-radius:18px}.form-head,form{padding:22px 18px}.grid,.choices{grid-template-columns:1fr}.step-nav{grid-template-columns:repeat(4,1fr)}.actions button{flex:1}.form-head h2{font-size:25px}}
   </style>
 </head>
@@ -81,7 +81,7 @@
           <button type="button" class="lang-btn" data-lang="ta">தமிழ்</button>
         </div>
       </div>
-      <div class="pill" data-i18n="privacyPill">🔒 Maklumat dikendalikan dengan bertanggungjawab</div>
+      <div class="pill" data-i18n="privacyPill">🔒 Maklumat anda adalah sulit dan hanya digunakan untuk tujuan bantuan serta tindakan susulan.</div>
     </div>
   </section>
 
@@ -241,7 +241,7 @@ const I18N = {
   "ms": {
     heroTitle1:"Kami Sedia Mendengar.", heroTitle2:"Anda Tidak Keseorangan.",
     heroDesc:"Jika ada sesuatu yang sedang mengganggu fikiran atau perasaan anda, kongsikan di sini. Kami sedia mendengar dan membantu sebaik mungkin.",
-    chooseLanguage:"Pilih bahasa:", privacyPill:"🔒 Maklumat dikendalikan dengan bertanggungjawab",
+    chooseLanguage:"Pilih bahasa:", privacyPill:"🔒 Maklumat anda adalah sulit dan hanya digunakan untuk tujuan bantuan serta tindakan susulan.",
     processTitle:"Proses perkongsian", navPersonal:"Maklumat Diri", navSituation:"Situasi", navHelp:"Bantuan", navShare:"Luahan",
     urgentHelpTitle:"Perlukan bantuan segera?", urgentHelpText:"Jika keselamatan anda terancam atau berlaku kecemasan, hubungi <b>999</b> atau Talian Kasih <b>15999</b>.",
     stepLabel:(n,total)=>`Langkah ${n} daripada ${total}`,
@@ -269,7 +269,7 @@ const I18N = {
   "zh-CN": {
     heroTitle1:"我们愿意倾听。", heroTitle2:"您并不孤单。",
     heroDesc:"如果有任何事情困扰着您的想法或情绪，请在这里告诉我们。我们愿意倾听，并尽力提供帮助。",
-    chooseLanguage:"选择语言：", privacyPill:"🔒 您的资料将被谨慎处理",
+    chooseLanguage:"选择语言：", privacyPill:"🔒 您的资料将严格保密，仅用于提供援助及后续跟进。",
     processTitle:"分享流程", navPersonal:"个人资料", navSituation:"当前情况", navHelp:"所需帮助", navShare:"倾诉",
     urgentHelpTitle:"需要紧急帮助吗？", urgentHelpText:"如果您的安全受到威胁或遇到紧急情况，请拨打 <b>999</b> 或 Talian Kasih <b>15999</b>。",
     stepLabel:(n,total)=>`第 ${n} 步，共 ${total} 步`,
@@ -297,7 +297,7 @@ const I18N = {
   "ta": {
     heroTitle1:"நாங்கள் கேட்கத் தயாராக இருக்கிறோம்.", heroTitle2:"நீங்கள் தனியாக இல்லை.",
     heroDesc:"உங்கள் எண்ணங்களையோ உணர்வுகளையோ பாதிக்கும் ஏதாவது இருந்தால், அதை இங்கே பகிருங்கள். நாங்கள் கேட்டு, முடிந்தவரை உதவத் தயாராக இருக்கிறோம்.",
-    chooseLanguage:"மொழியைத் தேர்ந்தெடுக்கவும்:", privacyPill:"🔒 தகவல்கள் பொறுப்புடன் கையாளப்படும்",
+    chooseLanguage:"மொழியைத் தேர்ந்தெடுக்கவும்:", privacyPill:"🔒 உங்கள் தகவல்கள் இரகசியமாக வைக்கப்பட்டு, உதவி மற்றும் தொடர்ச்சியான நடவடிக்கைகளுக்காக மட்டுமே பயன்படுத்தப்படும்.",
     processTitle:"பகிர்வு செயல்முறை", navPersonal:"தனிப்பட்ட தகவல்", navSituation:"நிலைமை", navHelp:"உதவி", navShare:"உங்கள் பகிர்வு",
     urgentHelpTitle:"உடனடி உதவி தேவையா?", urgentHelpText:"உங்கள் பாதுகாப்பு ஆபத்தில் இருந்தால் அல்லது அவசரநிலை ஏற்பட்டால், <b>999</b> அல்லது Talian Kasih <b>15999</b> ஐ உடனடியாக அழைக்கவும்.",
     stepLabel:(n,total)=>`படி ${n} / ${total}`,
